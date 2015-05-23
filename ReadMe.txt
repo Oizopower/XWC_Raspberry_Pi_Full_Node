@@ -1,7 +1,7 @@
-﻿Create a Feathercoin Full Node Without Compiling
+﻿Create a Whitecoin Full Node Without Compiling
 
 
-This instruction is to create a Feathercoin full node on a raspberry Pi.
+This instruction is to create a Whitecoin full node on a raspberry Pi.
 You will need the following things before we start
 * Raspberry Pi Model B, or B+
 * Minimum 8Gb class 10SD card, but I recommend a 16Gb Note: You may even get away with a 4GB card but I recommend against it
@@ -30,33 +30,33 @@ The few extra things you should do over a standard install is
 * Consider changing the hostname if you already have more than one Pi on your network
 
 Set up Rasbian as per the instructions from the Raspberry Pi website and SSH into the Pi.
-Note as configured this script will download a precompiled version of feathercoind to save you 4 hours of compiling,
+Note as configured this script will download a precompiled version of whitecoind to save you 4 hours of compiling,
 if you want to compile it yourself uncommoment that section of the script and comment out the bit that downlaods the precompiled one. 
 
 To Download everything off github onto your Pi use the following command
 
-sudo git clone https://github.com/tmuir12/FTC_Raspberry_Pi_Full_Node
+sudo git clone https://github.com/Whitecoin-org/XWC_Raspberry_Pi_Full_Node
 
-Now enter the directory FTC_Raspberry_Pi_Full_Node
+Now enter the directory XWC_Raspberry_Pi_Full_Node
 
-cd FTC_Raspberry_Pi_Full_Node/
+cd XWC_Raspberry_Pi_Full_Node/
 
 We now need to make the script executable by typing
 
-sudo chmod 755 feathercoind_node_precompiled.sh
+sudo chmod 755 whitecoind_node_precompiled.sh
 
 Now we need to start the install script by typing.
-./feathercoind_node_precompiled.sh
+./whitecoind_node_precompiled.sh
 
 
 This will 
 * Update the Pi to the latest version
-* Install needed applications to run feathercoind, 
-* Set up a firewall, that will allow ssh in and feathercoind to talk to other clients
-* Download feathercoind
+* Install needed applications to run whitecoind, 
+* Set up a firewall, that will allow ssh in and whitecoind to talk to other clients
+* Download whitecoind
 * Create a conf file with input from you to select a password for RDC
 * Download a fairly recent blockchain and chainstate to speed up the process of getting it running
-* create an /etc/init.d entry to start feathercoind as using ‘pi’ at boot
+* create an /etc/init.d entry to start whitecoind as using ‘pi’ at boot
 
 You are now on the home stretch.
 
@@ -66,47 +66,46 @@ You will need to read your router's manual to find out how to do this.
 Once you have set up your router its time to test it.
 Type sudo reboot
 Once the Pi has booted back up SSH back into it
-Give it 2 or 3 minutes for the Feathercoin daemon to start up and then to check it go
+Give it 2 or 3 minutes for the Whitecoin daemon to start up and then to check it go
 
 
-feathercoind getinfo
+whitecoind getinfo
 
 and you should be presented something like this
 
 
 {
-        "version" : 80701,
-        "protocolversion" : 60007,
-        "walletversion" : 60000,
-        "balance" : 0.00000000,
-        "blocks" : 444272,
-        "timeoffset" : 0,
-        "connections" : 100,
-        "proxy" : "",
-        "difficulty" : 9.85707588,
-        "testnet" : false,
-        "keypoololdest" : 1414901309,
-        "keypoolsize" : 101,
-        "paytxfee" : 0.00000000,
-        "mininput" : 0.00001000,
-        "errors" : ""
+    "version" : "v1.1.2.2",
+    "protocolversion" : 71002,
+    "walletversion" : 60000,
+    "balance" : 9.86057400,
+    "newmint" : 0.00000000,
+    "stake" : 0.00000000,
+    "blocks" : 366284,
+    "moneysupply" : 305380918.40797502,
+    "connections" : 43,
+    "difficulty" : 3.62502655,
+    "testnet" : false,
+    "keypoololdest" : 1411540496,
+    "keypoolsize" : 102,
+    "paytxfee" : 0.00010000,
+    "errors" : ""
 }
 
 
 
 
-If you get an error when trying the above command wait another couple of minutes and try again as it does take a fe minutes for feathercoind daemon to fully start up.
+
+If you get an error when trying the above command wait another couple of minutes and try again as it does take a fe minutes for whitecoind daemon to fully start up.
 Whilst it is catching up it will use about 90% of the CPU but once it has caught up it will only use 2% or 3%
-Once you have been online for a day or so you should be able to find your node here
-https://bitinfocharts.com/feathercoin/nodes/
 
 You can also look at installing apache mysql and PHP and install a web front end to let you see what is happening by your web browser if you want, but don't forget to open up port 80 on the Pis firewall if you do.
 
 
 Troubleshooting
-If after rebooting feathercoind doesn't appear to be running try the command
+If after rebooting whitecoind doesn't appear to be running try the command
 
-sudo /etc/init.d/feathercoin start
+sudo /etc/init.d/whitecoin start
 
 You will be prompted for user pi password deatils before it will start and if it doesn't start will give you an error message
 explaining why.
