@@ -35,7 +35,7 @@ if you want to compile it yourself uncommoment that section of the script and co
 
 To Download everything off github onto your Pi use the following command
 
-sudo git clone https://github.com/Whitecoin-org/XWC_Raspberry_Pi_Full_Node
+git clone https://github.com/Oizopower/XWC_Raspberry_Pi_Full_Node
 
 Now enter the directory XWC_Raspberry_Pi_Full_Node
 
