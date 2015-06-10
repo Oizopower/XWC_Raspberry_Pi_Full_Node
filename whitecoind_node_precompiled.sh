@@ -111,9 +111,9 @@ echo Downloading blockchain and chainstate. This is a 320 Meg download so will t
 echo press enter to continue, or ctrl c to quit...
 read whatever
 
-sudo wget http://explorer.whitecoin.info/bootstrap/raw_blockchain.zip
-unzip raw_blockchain.zip
-sudo rm raw_blockchain.zip
+sudo wget http://explorer.whitecoin.info/bootstrap/raw_bootstrap.zip
+unzip raw_bootstrap.zip
+sudo rm raw_bootstrap.zip
 
 echo thats you all set up just sudo reboot to restart your pi, give it a few minutes after booting for the whitecoind daemon to start up and your off and running
 
